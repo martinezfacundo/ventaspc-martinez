@@ -1,13 +1,15 @@
 import logo from './logo.svg';
+import NavBar from './components/NavBar'; // importo el componente
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Ventas Pc - Martinez
         </p>
         <a
           className="App-link"
