@@ -1,4 +1,5 @@
 import React from 'react';
+import CartWidget from './CartWidget';
 
 const barra = {background: '#1b1c1c',
 display: 'flex', justifyContent: 'space-between',alignItems:'center'}
@@ -16,6 +17,7 @@ function NavBar(){
                 <a style={link} href="#">Home</a>
                 <a style={link} href="#">Shop</a>
                 <a style={link} href="#">About</a>
+                <CartWidget />
             </div>
         </div>
     )
