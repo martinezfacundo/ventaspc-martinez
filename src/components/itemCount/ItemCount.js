@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const ItemCount = ({stock: initialStock,onAdd,initial}) => {
+const ItemCount = ({stock: stock,onAdd,initial}) => {
 
     const botonStyles = {border:'none', background:'black', margin:'5px', padding:'5px 10px',color:'white',textTransform:'uppercase',fontWeight:'700',fontFamily:'sans-serif'}
     const countSyles = {fontFamily:'sans-serif',fontWeight:'700',display:'inline-block'}
     const [count, setCount] = useState(initial)
 
     const sumarCount = () => {
-        if (count <= stock) {
+        if (count < stock) {
             setCount(count + 1)
             console.log('Items en el carrito:',count)
             console.log('Stock actual:',stock)
