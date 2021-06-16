@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <NavBar />
       <ItemListContainer greeting="Hola soy Item List Container"/>
-      <ItemCount initial={0} stock={15} onAdd={onAdd} />
+      <ItemCount initial={1} stock={15} onAdd={onAdd} />
     </div>
   );
 }

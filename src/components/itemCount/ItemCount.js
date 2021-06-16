@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 
-const ItemCount = ({stock: initialStock,onAdd,initial}) => {
+const ItemCount = ({stock,onAdd,initial}) => {
 
-    var [count,setCount] = useState(initial)
-    var [stock, setStock] = useState(initialStock)
+    const [count, setCount] = useState(initial)
 
     const sumarCount = () => {
-        if (stock > 0 && count <= stock) {
+        if (count <= stock) {
             setCount(count++)
-            setStock(stock--)
+            stock--
             console.log('Items en el carrito:',count)
             console.log('Stock actual:',stock)
         }
     }
 
     const restarCount = () => {
-        if (count > 0) {
+        if (count > initial) {
             setCount(count--)
-            setStock(stock++)
+            stock++
             console.log('Items en el carrito:',count)
             console.log('Stock actual:',stock)
         }
