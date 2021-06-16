@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ItemCount = ({stock: stock,onAdd,initial}) => {
+const ItemCount = ({stock,onAdd,initial}) => {
 
     const botonStyles = {border:'none', background:'black', margin:'5px', padding:'5px 10px',color:'white',textTransform:'uppercase',fontWeight:'700',fontFamily:'sans-serif'}
     const countSyles = {fontFamily:'sans-serif',fontWeight:'700',display:'inline-block'}
