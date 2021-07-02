@@ -1,5 +1,6 @@
 import React from 'react';
 import CartWidget from '../cartWidget/CartWidget';
+import {Link} from "react-router-dom";
 
 const barra = {background: '#1b1c1c',
 display: 'flex', justifyContent: 'space-between',alignItems:'center'}
@@ -14,12 +15,10 @@ function NavBar(){
                 Ventas Pc
             </h1>
             <div style={espacioLink}>
-                <a style={link} href="#">Home</a>
-                <a style={link} href="#">Escritorio</a>
-                <a style={link} href="#">Laptop</a>
-                <a style={link} href="#">Componentes</a>
-                <a style={link} href="#">Perifericos</a>
-                <CartWidget />
+                <Link style={link} to="/">Home</Link>
+                <Link style={link} to="/computers">Computers</Link>
+                <Link style={link} to="/components">Components</Link>
+                <Link style={link} to="/cart"><CartWidget /></Link>
             </div>
         </div>
     )
