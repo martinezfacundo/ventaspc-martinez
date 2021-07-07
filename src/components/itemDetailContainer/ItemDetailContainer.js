@@ -39,29 +39,30 @@ const items = [
 ]
 
 function ItemDetailContainer() {
-
-    const {itemId} = useParams()
-
-    const [productDetail, setProduct] = useState()
+    const { itemId } = useParams();
+    const [productDetail, setProduct] = useState([]);
 
     const getItems = () => {
-        new Promise((resolve,reject) => {
-            setTimeout(() => resolve(items),2000)
-        }).then(res => {
-            const itemFiltrado = res.filter(elem => elem.id == itemId)
-            setProduct(itemFiltrado)
-        })
-    }
+        new Promise((resolve, reject) => {
+        setTimeout(() => resolve(items), 2000);
+        }).then((res) => {
+        const itemFiltrado = res.filter((elem) => elem.id == itemId);
+        setProduct(itemFiltrado);
+        });
+    };
 
-    console.log(productDetail)
-    useEffect(getItems, [itemId])
-
+    useEffect(getItems, [itemId]);
+    console.log("pd", productDetail);
     return (
         <div>
             <h2>ITEM NUMERO: {itemId}</h2>
-            <ItemDetail {... productDetail} />
+                {productDetail.map((data) => (
+            <div>
+                <ItemDetail objeto={data} />
+            </div>
+            ))}
         </div>
-    )
+    );
 }
 
 export default ItemDetailContainer
