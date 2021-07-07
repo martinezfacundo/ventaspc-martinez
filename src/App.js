@@ -3,11 +3,7 @@ import ItemListContainer from './components/itemListContainer/ItemListContainer'
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
-// pages
-import Home from './components/pages/Home';
-import Computers from './components/pages/Computers';
-import Components from './components/pages/Components';
-import Cart from './components/pages/Cart';
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 
 function App() {
 
@@ -18,19 +14,15 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Home />
+            <ItemListContainer />
           </Route>
 
-          <Route exact path="/computers">
-            <Computers />
+          <Route exact path="/category/:categoryId">
+            <ItemListContainer />
           </Route>
 
-          <Route exact path="/components">
-            <Components />
-          </Route>
-
-          <Route exact path="/cart">
-            <Cart />
+          <Route exact path='/item/:itemId'>
+            <ItemDetailContainer />
           </Route>
         </Switch>
 
