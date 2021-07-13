@@ -1,45 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import ItemCount from '../itemCount/ItemCount';
 import ItemList from '../itemList/ItemList';
-import PcImg from '../assets/pcdesktop.jpg'
 import { useParams } from 'react-router-dom';
-
-const styles = {color:'black',fontSize:'30px'}
-
-const items = [
-    {   
-        category: 'computers',
-        id: 1,
-        title: 'Pc Desktop Numero 1',
-        description: 'Pc Gaming Numero 1',
-        price: '$1000',
-        pictureUrl: PcImg
-    },
-    {
-        category: 'computers',
-        id: 2,
-        title: 'Pc Desktop Numero 2',
-        description: 'Pc Gaming Numero 2',
-        price: '$1500',
-        pictureUrl: PcImg
-    },
-    {   
-        category: 'components',
-        id: 3,
-        title: 'Pc Desktop Numero 3',
-        description: 'Pc Gaming Numero 3',
-        price: '$2000',
-        pictureUrl: PcImg
-    },
-    {   
-        category: 'components',
-        id: 4,
-        title: 'Pc Desktop Numero 4',
-        description: 'Pc Gaming Numero 4',
-        price: '$1500',
-        pictureUrl: PcImg
-    }
-]
+import {items} from '../assets/products'
+import './ItemListContainer.css'
 
 function ItemListContainer({greeting}) {
 
@@ -64,9 +27,10 @@ function ItemListContainer({greeting}) {
     
     return(
         <div>
-        <h1 styles={styles}>{greeting}</h1>
-        <ItemCount initial={1} stock={15} onAdd={() => {console.log('Agregado')}} />
-        <ItemList data={itemsArray}/>
+            <h1 className='styles'>{greeting}</h1>
+            <div>
+                <ItemList data={itemsArray}/>
+            </div>
         </div>
     )
 }

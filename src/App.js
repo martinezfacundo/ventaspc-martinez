@@ -4,6 +4,7 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
+import Cart from './components/cart/Cart';
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <ItemListContainer />
+            <ItemListContainer/>
           </Route>
 
           <Route exact path="/category/:categoryId">
@@ -23,6 +24,10 @@ function App() {
 
           <Route exact path='/item/:itemId'>
             <ItemDetailContainer />
+          </Route>
+
+          <Route exact path='/cart'>
+            <Cart />
           </Route>
         </Switch>
 

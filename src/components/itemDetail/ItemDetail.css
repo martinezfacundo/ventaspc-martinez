@@ -1,0 +1,24 @@
+.stylesImg {
+    width: 10vw;
+}
+
+.stylesDiv {
+    width: 25vw;
+    border: solid .1vw black;
+    margin: 5vh auto;
+}
+
+.stylesDiv h4 {
+    font-weight: 300;
+}
+
+.boton-terminar {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: .5vh .5vw;
+}
+
+.boton-terminar:hover {
+    background-color: rgb(56, 56, 56);
+}

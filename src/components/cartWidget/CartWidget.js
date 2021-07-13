@@ -1,10 +1,11 @@
 import React from 'react'
-import Cart from '../assets/carrito-de-compras.png'
+import {Link} from 'react-router-dom'
+import CartIcon from '../assets/carrito-de-compras.png'
 import './CartWidget.css'
 
 function CartWidget() {
     return (
-        <img className='imagen' src={Cart} alt="carrito" />
+        <Link to='/cart'><img className='imagen' src={CartIcon} alt="carrito" /></Link>
     )
 }
 

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import './ItemCount.css'
 
 const ItemCount = ({stock,onAdd,initial}) => {
 
-    const botonStyles = {border:'none', background:'black', margin:'5px', padding:'5px 10px',color:'white',textTransform:'uppercase',fontWeight:'700',fontFamily:'sans-serif'}
-    const countSyles = {fontFamily:'sans-serif',fontWeight:'700',display:'inline-block'}
     const [count, setCount] = useState(initial)
 
     const sumarCount = () => {
@@ -24,10 +23,10 @@ const ItemCount = ({stock,onAdd,initial}) => {
 
     return(
         <div>
-            <button style={botonStyles} onClick={sumarCount}>+</button>
-            <div style={countSyles}>{count}</div>
-            <button style={botonStyles} onClick={restarCount}>-</button>
-            <button style={botonStyles} onClick={onAdd}>Agregar al carrito</button>
+            <button className='botonStyles' onClick={sumarCount}>+</button>
+            <div className='countStyles'>{count}</div>
+            <button className='botonStyles' onClick={restarCount}>-</button>
+            <button className='botonStyles' onClick={() => onAdd(count)}>Agregar al carrito</button>
         </div>    
     )
 }

@@ -1,0 +1,21 @@
+.barra {
+    background-color: #1b1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.espacio-titulo {
+    color: white;
+}
+
+.espacio-link {
+    display: flex;
+    justify-content: space-between;
+    width: 32rem;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+}
