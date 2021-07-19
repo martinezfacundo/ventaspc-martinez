@@ -9,7 +9,7 @@ const Item = ({id,title,price,pictureUrl}) => {
             <div className='item-container'>
                 <img className='stylesImg' src={pictureUrl} alt='imagen producto'/>
                 <h3>{title}</h3>
-                <h4>{price}</h4> 
+                <h4>${price}</h4> 
                 <Link to={`/item/${id}`} className='linkStyle'>VER MAS</Link>
             </div>
         </div>

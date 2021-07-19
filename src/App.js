@@ -2,14 +2,20 @@ import NavBar from './components/navBar/NavBar'; // importo el componente
 import ItemListContainer from './components/itemListContainer/ItemListContainer';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import Cart from './components/cart/Cart';
+import { CartContext } from './components/context/CartContext';
+import { useState } from 'react';
 
 function App() {
 
+  var productsArray = []
+
+  const [cartData, setCartData] = useState(productsArray)
+
   return (
     <div className="App">
+      <CartContext.Provider value={{cartData, setCartData, productsArray}}>
       <Router>
       <NavBar />
 
@@ -32,6 +38,7 @@ function App() {
         </Switch>
 
       </Router>
+      </CartContext.Provider>
     </div>
   );
 }

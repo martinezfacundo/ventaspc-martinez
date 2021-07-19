@@ -1,0 +1,21 @@
+.item-container h3 span {
+    font-weight: 300;
+}
+
+.item-container h3 {
+    font-weight: 500;
+}
+
+.item-container {
+    width: 20vw;
+    margin: 0 auto;
+}
+
+.item-container button {
+    border: none;
+    background-color: rgb(199, 38, 38);
+    width: 5vw;
+    height: 2vh;
+    margin: 2vh 0;
+    color: white;
+}
