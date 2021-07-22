@@ -1,0 +1,13 @@
+.boton-regresar {
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    height: 3vh;
+    width: 8vw;
+    border: none;
+}
+
+.boton-regresar:hover {
+    background-color: rgb(43, 42, 42);
+    cursor: pointer;
+}

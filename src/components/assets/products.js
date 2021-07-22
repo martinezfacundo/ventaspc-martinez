@@ -17,7 +17,7 @@ const items = [
         id: 1,
         title: 'PC GAMING NUMERO UNO',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1000',
+        price: 1000,
         pictureUrl: pcUno
     },
     {
@@ -25,7 +25,7 @@ const items = [
         id: 2,
         title: 'PC GAMING NUMERO DOS',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: pcDos
     },
     {   
@@ -33,7 +33,7 @@ const items = [
         id: 3,
         title: 'PC GAMING NUMERO TRES',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '2000',
+        price: 2000,
         pictureUrl: pcTres
     },
     {   
@@ -41,7 +41,7 @@ const items = [
         id: 4,
         title: 'PC GAMING NUMERO CUATRO',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: pcCuatro
     },
     {   
@@ -49,7 +49,7 @@ const items = [
         id: 5,
         title: 'PC GAMING NUMERO CINCO',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: pcCinco
     },
     {   
@@ -57,7 +57,7 @@ const items = [
         id: 6,
         title: 'PC GAMING NUMERO SEIS',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: pcSeis
     },
     {   
@@ -65,7 +65,7 @@ const items = [
         id: 7,
         title: 'PC GAMING NUMERO SIETE',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: pcSiete
     },
     {   
@@ -73,7 +73,7 @@ const items = [
         id: 8,
         title: 'PC GAMING NUMERO OCHO',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: pcOcho
     },
     {   
@@ -81,7 +81,7 @@ const items = [
         id: 9,
         title: 'COMPONENTES NUMERO UNO',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: comboUno
     },
     {   
@@ -89,7 +89,7 @@ const items = [
         id: 10,
         title: 'COMPONENTES NUMERO DOS',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: comboDos
     },
     {   
@@ -97,7 +97,7 @@ const items = [
         id: 11,
         title: 'COMPONENTES NUMERO TRES',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: comboTres
     },
     {   
@@ -105,7 +105,7 @@ const items = [
         id: 12,
         title: 'COMPONENTES NUMERO CUATRO',
         description: 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using',
-        price: '1500',
+        price: 1500,
         pictureUrl: comboCuatro
     }
 ]

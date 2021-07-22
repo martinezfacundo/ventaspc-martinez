@@ -20,7 +20,7 @@ function ItemDetailContainer() {
     return (
         <div>
                 {productDetail.map((data) => (
-            <div>
+            <div key={data.id}>
                 <ItemDetail objeto={data} />
             </div>
             ))}

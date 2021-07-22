@@ -1,4 +1,9 @@
 .imagen {
     height: 2vh;
     width: 1vw;
+    margin-right: .5vw;
+}
+
+.widget-container {
+    display: flex;
 }

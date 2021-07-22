@@ -9,6 +9,7 @@ export default function ItemCart ({producto}) {
     const deleteItem = () => {
         var productIndex = useCart.productsArray.indexOf(producto)
         useCart.productsArray.splice(productIndex, 1)
+        console.log('borre un item ->', useCart.cartData)
     }
 
     return (

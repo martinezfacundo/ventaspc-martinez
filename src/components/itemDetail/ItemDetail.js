@@ -1,12 +1,14 @@
 import React, {useState, useContext, useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import ItemCount from '../itemCount/ItemCount';
 import './ItemDetail.css'
 import { CartContext } from '../context/CartContext';
+import { TotalContext } from '../context/TotalContext';
 
 function ItemDetail({ objeto }) {
 
     const useCart = useContext(CartContext)
+    const useTotal = useContext(TotalContext)
     const[cantidad, setCantidad] = useState()
 
     const onAdd = (valor) => {
@@ -15,10 +17,6 @@ function ItemDetail({ objeto }) {
         useCart.productsArray.push({item: {...objeto}, quantity: valor})) :
         useCart.productsArray.push({item: {...objeto}, quantity: valor})
     }
-
-    useEffect(() => {
-        useCart.setCartData(useCart.productsArray)
-    }, [useCart.productsArray])
 
     return (
         <div className='stylesDiv'>
