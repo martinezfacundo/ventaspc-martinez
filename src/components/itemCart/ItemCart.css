@@ -14,8 +14,12 @@
 .item-container button {
     border: none;
     background-color: rgb(199, 38, 38);
-    width: 5vw;
-    height: 2vh;
+    padding: .5vh 1vw;
     margin: 2vh 0;
     color: white;
+}
+
+.item-container button:hover {
+    cursor: pointer;
+    background-color: brown;
 }

@@ -4,20 +4,13 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import Cart from './components/cart/Cart';
-import { CartContext} from './components/context/CartContext';
-import { TotalContext } from './components/context/TotalContext';
-import { useState } from 'react';
+import { CartProvider } from './context/CartContext';
 
 function App() {
 
-  var productsArray = []
-  const [cartData, setCartData] = useState(productsArray)
-  const [total, setTotal] = useState(0)
-
   return (
-    <TotalContext.Provider value={{total, setTotal}}>
-    <CartContext.Provider value={{cartData, setCartData, productsArray}}>
     <div className="App">
+    <CartProvider>
       <Router>
       <NavBar />
 
@@ -40,9 +33,8 @@ function App() {
         </Switch>
 
       </Router>
+      </CartProvider>
     </div>
-      </CartContext.Provider>
-      </TotalContext.Provider>
   );
 }
 

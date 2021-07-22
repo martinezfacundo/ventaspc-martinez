@@ -1,24 +1,23 @@
 import React, {useContext, useEffect, useState} from 'react'
-import { CartContext } from '../context/CartContext'
-import { TotalContext } from '../context/TotalContext'
+import { useCart } from '../../context/CartContext'
 import ItemCartContainer from '../itemCartContainer/ItemCartContainer'
 import {Link} from 'react-router-dom'
 import './Cart.css'
 
 function Cart() {
 
-    const useCart = useContext(CartContext)
-    const useTotal = useContext(TotalContext)
+    const {cartData, productsArray, clear} = useCart()
 
-    useEffect(() => console.log('estado de Cart ->', useCart.cartData), [])
-    useEffect(() => {console.log('e.d.c cambio cartdata ->', useCart.cartData)}, [useCart.cartData])
+    useEffect(() => console.log('estado de Cart ->', cartData), [])
+    useEffect(() => {console.log('e.d.c cambio cartdata ->', cartData)}, [cartData])
 
     return (
         <div>
-            {useCart.cartData ? 
+            { productsArray.length ? 
             <>
-            <ItemCartContainer itemsArray={useCart.cartData}/>
-            <h2>Total: {useTotal.total}</h2>
+            <ItemCartContainer itemsArray={productsArray}/>
+            <h2>Total: </h2>
+            <button className='boton-vaciar' onClick={clear}>Vaciar Carrito</button>
             </> : 
             <>
             <h3>No hay items en su carrito</h3>

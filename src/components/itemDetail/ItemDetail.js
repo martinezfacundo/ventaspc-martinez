@@ -1,21 +1,17 @@
-import React, {useState, useContext, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Link} from 'react-router-dom';
 import ItemCount from '../itemCount/ItemCount';
 import './ItemDetail.css'
-import { CartContext } from '../context/CartContext';
-import { TotalContext } from '../context/TotalContext';
+import { useCart } from '../../context/CartContext';
 
 function ItemDetail({ objeto }) {
 
-    const useCart = useContext(CartContext)
-    const useTotal = useContext(TotalContext)
+    const {addItem} = useCart()
     const[cantidad, setCantidad] = useState()
 
     const onAdd = (valor) => {
         setCantidad(valor)
-        useCart.productsArray.length ? (useCart.productsArray.find(elem => elem.item.id === objeto.id) ? console.log('Item repetido') : 
-        useCart.productsArray.push({item: {...objeto}, quantity: valor})) :
-        useCart.productsArray.push({item: {...objeto}, quantity: valor})
+        addItem(objeto, valor)
     }
 
     return (

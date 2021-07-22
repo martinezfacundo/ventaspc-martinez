@@ -1,22 +1,30 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, {useEffect, useState } from 'react'
 import {Link} from 'react-router-dom'
 import CartIcon from '../assets/carrito-de-compras.png'
-import { CartContext } from '../context/CartContext'
+import { useCart } from '../../context/CartContext'
 import './CartWidget.css'
 
 function CartWidget() {
 
-    const [cantidad, setCantidad] = useState(0)
-    const useCart = useContext(CartContext)
+    const [mostrar, setMostrar] = useState()
+    const {productsArray, cartData} = useCart()
+
+    useEffect(() => {
+        setMostrar(false)
+    }, [])
+
+    useEffect(() => {
+        console.log('CAMBIEE')
+    }, [cartData])
 
     return (
-        <>
-        {useCart.cartData && 
+        <div>
+        {console.log(productsArray.length)}
+        {mostrar ?
         <div className='widget-container'>
         <Link to='/cart'><img className='imagen' src={CartIcon} alt="carrito" /></Link>
-        <div>{cantidad}</div>
-        </div>}
-        </>
+        </div> : <div>nada</div>}
+        </div>
     )
 }
 

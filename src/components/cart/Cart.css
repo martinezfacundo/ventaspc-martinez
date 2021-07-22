@@ -2,12 +2,24 @@
     text-decoration: none;
     background-color: black;
     color: white;
-    height: 3vh;
-    width: 8vw;
+    padding: 1vh 2vw;
     border: none;
 }
 
 .boton-regresar:hover {
     background-color: rgb(43, 42, 42);
+    cursor: pointer;
+}
+
+.boton-vaciar {
+    border: none;
+    background-color: rgb(199, 38, 38);
+    padding: 1.5vh 3vw;
+    color: white;
+    text-transform: uppercase;
+}
+
+.boton-vaciar:hover {
+    background-color: brown;
     cursor: pointer;
 }
