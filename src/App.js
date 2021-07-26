@@ -12,22 +12,25 @@ function App() {
     <div className="App">
     <CartProvider>
       <Router>
-      <NavBar />
 
         <Switch>
           <Route exact path="/">
+            <NavBar />
             <ItemListContainer/>
           </Route>
 
           <Route exact path="/category/:categoryId">
+            <NavBar />
             <ItemListContainer />
           </Route>
 
           <Route exact path='/item/:itemId'>
+            <NavBar />
             <ItemDetailContainer />
           </Route>
 
           <Route exact path='/cart'>
+            <NavBar />
             <Cart />
           </Route>
         </Switch>

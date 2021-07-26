@@ -1,37 +1,44 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 export const CartContext = createContext()
 export const useCart = () => useContext(CartContext)
 
 export const CartProvider = props => {
 
-    const [cartData, setCartData] = useState()
-    var cantidadTotal = 0;
+    const [cartData, setCartData] = useState([])
 
-    console.log(cartData)
-/*
-    const totalItems = () => {
-            const reducer = ((acumulador, valorActual) => acumulador + valorActual.quantity, 0);
-            cantidadTotal = cartData?.reduce(reducer);
-            return cantidadTotal
-    };
-*/
+    useEffect(() =>{
+        console.log('cambiaste cart', cartData)
+    }, [cartData])
+
     const addItem = (data, cantidad) => {
-            if (cartData?.find(elem => elem.item.id === data.id)) {
+            if (cartData?.find(elem => elem.id === data.id)) {
                 const itemNew = cartData.map(prod => {
-                    if (prod.item.id === data.id) {
-                        return {... prod, quantity: data.quantity + cantidad}
+                    if (prod.id === data.id) {
+                        return prod.quantity += cantidad
                     }
-                    return prod;
                 })
-                setCartData(itemNew)
             } else {
-                return setCartData([{... data, cantidad}]) 
-                }
+                setCartData(state => {
+                    return  [...state, {... data, quantity: cantidad}]
+                })
             }
+        }
+
+    const deleteItem = (product) => {
+        const dataFiltrada = cartData.filter((elem) => elem !== product)
+        setCartData(dataFiltrada)
+    }
+
+    const clearItems = () => {
+        setCartData([])
+    }
+
+    const totalItems = () => cartData.reduce((acum, prod) => acum + prod.quantity, 0)
+    const totalPrice = () => cartData.reduce((acum, prod) => acum + (prod.price * prod.quantity), 0)
 
     return (
-        <CartContext.Provider value={{cartData, addItem, cantidadTotal}}>
+        <CartContext.Provider value={{cartData, addItem, deleteItem, clearItems, totalItems, totalPrice}}>
             {props.children}
         </CartContext.Provider>
     )

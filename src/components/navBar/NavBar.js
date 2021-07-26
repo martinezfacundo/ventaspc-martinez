@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CartWidget from '../cartWidget/CartWidget';
 import {Link} from "react-router-dom";
 import './NavBar.css'
@@ -9,9 +9,16 @@ const components = 'components';
 
 function NavBar(){
 
+    const {cartData} = useCart()
+    const [items, setItems] = useState()
+
+    useEffect(() => {
+        console.log('cambie soy estado')
+    }, [cartData])
 
     return(
         <div className='barra'>
+            
             <div>
                 <Link className='link' to='/'>
                     <h1 className='espacio-titulo'>VENTAS PC</h1>
