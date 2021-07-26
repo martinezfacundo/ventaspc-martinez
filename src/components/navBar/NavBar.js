@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CartWidget from '../cartWidget/CartWidget';
 import {Link} from "react-router-dom";
 import './NavBar.css'
+import { useCart } from '../../context/CartContext'
 
 const computers = 'computers';
 const components = 'components';
 
 function NavBar(){
+
+
     return(
         <div className='barra'>
             <div>

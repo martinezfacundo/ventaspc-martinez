@@ -6,18 +6,18 @@ import './Cart.css'
 
 function Cart() {
 
-    const {cartData, productsArray, clear} = useCart()
+    const {cartData} = useCart()
 
     useEffect(() => console.log('estado de Cart ->', cartData), [])
     useEffect(() => {console.log('e.d.c cambio cartdata ->', cartData)}, [cartData])
 
     return (
         <div>
-            { productsArray.length ? 
+            { cartData ? 
             <>
-            <ItemCartContainer itemsArray={productsArray}/>
-            <h2>Total: </h2>
-            <button className='boton-vaciar' onClick={clear}>Vaciar Carrito</button>
+            <ItemCartContainer itemsArray={cartData}/>
+            <h2>Total items:</h2>
+            <button className='boton-vaciar'>Vaciar Carrito</button>
             </> : 
             <>
             <h3>No hay items en su carrito</h3>

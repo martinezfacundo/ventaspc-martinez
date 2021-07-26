@@ -1,35 +1,60 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from '../itemList/ItemList';
 import { useParams } from 'react-router-dom';
-import {items} from '../assets/products'
 import './ItemListContainer.css'
+import {getFirestore} from '../../firebase'
 
 function ItemListContainer({greeting}) {
 
     const {categoryId} = useParams()
+    const [itemsList, setItemsList] = useState();
 
-    const[itemsArray,setItemsArray] = useState([])
+    const getProducts = () => {
+        const db = getFirestore();
+        const itemCollection = db.collection("items").orderBy("id", "asc");
+        return itemCollection.get().then((querySnapshot) => {
+            if(querySnapshot.size === 0){
+                console.log('no results')
+            } else {
+                setItemsList(querySnapshot.docs.map(doc => doc.data()))
+            }
+        }).catch(error => {
+            console.log('error ->', error)
+        })
+    }
+
+    const filterProducts = () => {
+        const db = getFirestore();
+        const itemCollection = db.collection("items")
+        .where("category", "==", `${categoryId}`)
+        return itemCollection.get().then((querySnapshot) => {
+            if(querySnapshot.size === 0){
+                console.log('no results')
+            } else {
+                setItemsList(querySnapshot.docs.map(doc => doc.data()))
+            }
+        }).catch(error => {
+            console.log('error ->', error)
+        })
+    }
 
     useEffect(() => {
-        new Promise((resolve,reject) => {
-            setTimeout( () => resolve(items), 2000)    
-        }).then(data => {
+        getProducts()
+    }, [])
+
+    useEffect(() => {
             if(categoryId) {
-                const dataFiltrada = data.filter(elem => elem.category === categoryId)
-            setItemsArray(dataFiltrada)
+                filterProducts()
             } else {
-                setTimeout(() => {
-                    setItemsArray(data)
-                }, 2000);
+                getProducts()
             }
-            })
         }, [categoryId])
-    
+
     return(
         <div>
             <h1 className='styles'>{greeting}</h1>
             <div>
-                <ItemList data={itemsArray}/>
+                {itemsList && <ItemList data={itemsList}/>}
             </div>
         </div>
     )

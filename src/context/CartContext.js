@@ -5,37 +5,33 @@ export const useCart = () => useContext(CartContext)
 
 export const CartProvider = props => {
 
-    var productsArray = []
-    const [cartData, setCartData] = useState(productsArray)
+    const [cartData, setCartData] = useState()
+    var cantidadTotal = 0;
 
+    console.log(cartData)
+/*
+    const totalItems = () => {
+            const reducer = ((acumulador, valorActual) => acumulador + valorActual.quantity, 0);
+            cantidadTotal = cartData?.reduce(reducer);
+            return cantidadTotal
+    };
+*/
     const addItem = (data, cantidad) => {
-        if (productsArray.length) {
-            if (productsArray.find(elem => elem.item.id === data.id)) {
-                productsArray.map(prod => {
+            if (cartData?.find(elem => elem.item.id === data.id)) {
+                const itemNew = cartData.map(prod => {
                     if (prod.item.id === data.id) {
-                        return prod.quantity += cantidad
+                        return {... prod, quantity: data.quantity + cantidad}
                     }
+                    return prod;
                 })
+                setCartData(itemNew)
             } else {
-                return productsArray.push({item: {...data}, quantity: cantidad})
+                return setCartData([{... data, cantidad}]) 
+                }
             }
-        } else {
-            return productsArray.push({item: {...data}, quantity: cantidad})
-        }
-    }
-
-    const deleteItem = (prod) => {
-        var productIndex = productsArray.indexOf(prod)
-        productsArray.splice(productIndex, 1)
-        console.log('borre un item ->', cartData)
-    }
-
-    const clear = () => {
-        productsArray.splice(0, productsArray.length);
-    }
 
     return (
-        <CartContext.Provider value={{cartData, productsArray, addItem, deleteItem, clear}}>
+        <CartContext.Provider value={{cartData, addItem, cantidadTotal}}>
             {props.children}
         </CartContext.Provider>
     )
