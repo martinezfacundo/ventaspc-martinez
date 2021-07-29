@@ -1,0 +1,43 @@
+.container {
+    background-color: rgb(189, 187, 187);
+    width: 50%;
+    margin: 5vh auto;
+    padding: 5vh 0;
+}
+
+.container h2 {
+    margin: 0;
+    margin-bottom: 5vh;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.form-container input {
+    background-color: rgb(189, 187, 187);
+    margin: 1vh 0;
+    border: none;
+    border-bottom: .1vh solid black;
+    font-size: calc(.7vw + .2rem);
+}
+
+.form-container input:focus {
+    outline: none;
+}
+
+.form-container buttom {
+    background-color: black;
+    padding: .5vh 1vw;
+    margin: 0 auto;
+    margin-top: 5vh;
+    color: white;
+}
+
+.form-container buttom:hover {
+    background-color: rgb(44, 44, 44);
+    cursor: pointer;
+}

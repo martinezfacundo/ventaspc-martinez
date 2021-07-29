@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import Cart from './components/cart/Cart';
 import { CartProvider } from './context/CartContext';
+import CartFinish from './components/cartFinish/CartFinish';
 
 function App() {
 
@@ -32,6 +33,11 @@ function App() {
           <Route exact path='/cart'>
             <NavBar />
             <Cart />
+          </Route>
+
+          <Route exact path="/cart/finish">
+            <NavBar />
+            <CartFinish />
           </Route>
         </Switch>
 

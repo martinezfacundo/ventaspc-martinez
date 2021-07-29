@@ -19,3 +19,11 @@
     font-weight: 700;
     display: inline-block;
 }
+
+.stock {
+    background-color: black;
+    width: 40%;
+    margin: 2vh auto;
+    color: white;
+    text-transform: uppercase;
+}

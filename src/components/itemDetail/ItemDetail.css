@@ -12,13 +12,13 @@
     font-weight: 300;
 }
 
-.boton-terminar {
+.boton-carrito {
     text-decoration: none;
     background-color: black;
     color: white;
     padding: .5vh .5vw;
 }
 
-.boton-terminar:hover {
+.boton-carrito:hover {
     background-color: rgb(56, 56, 56);
 }
