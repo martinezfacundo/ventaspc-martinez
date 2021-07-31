@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { getFirestore } from "../firebase";
 
 export const CartContext = createContext()
@@ -8,20 +8,16 @@ export const CartProvider = props => {
 
     const [cartData, setCartData] = useState([])
 
-    useEffect(() =>{
-        console.log('cambiaste cart', cartData)
-    }, [cartData])
-
     const addItem = (data, cantidad) => {
             if (cartData?.find(elem => elem.id === data.id)) {
-                const itemNew = cartData.map(prod => {
+                cartData.map(prod => {
                     if (prod.id === data.id) {
                         return prod.quantity += cantidad
                     }
                 })
             } else {
                 setCartData(state => {
-                    return  [...state, {... data, quantity: cantidad}]
+                    return  [...state, {...data, quantity: cantidad}]
                 })
             }
         }

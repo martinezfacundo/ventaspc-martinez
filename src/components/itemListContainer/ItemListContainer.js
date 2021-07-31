@@ -39,10 +39,6 @@ function ItemListContainer({greeting}) {
     }
 
     useEffect(() => {
-        getProducts()
-    }, [])
-
-    useEffect(() => {
             if(categoryId) {
                 filterProducts()
             } else {

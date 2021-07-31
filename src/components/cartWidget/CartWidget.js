@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import CartIcon from '../assets/carrito-de-compras.png'
 import { useCart } from '../../context/CartContext'
 import './CartWidget.css'

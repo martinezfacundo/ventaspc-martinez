@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React from 'react'
 import { useCart } from '../../context/CartContext'
 import ItemCartContainer from '../itemCartContainer/ItemCartContainer'
 import {Link} from 'react-router-dom'
@@ -7,9 +7,6 @@ import './Cart.css'
 function Cart() {
 
     const {cartData, clearItems, totalPrice} = useCart()
-
-    useEffect(() => console.log('estado de Cart ->', cartData), [])
-    useEffect(() => {console.log('e.d.c cambio cartdata ->', cartData)}, [cartData])
 
     return (<div>
             {cartData.length > 0 ?

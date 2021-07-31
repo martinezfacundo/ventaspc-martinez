@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import './CartFinish.css'
-import { getFirestore, getFirebase } from '../../firebase'
+import { getFirestore } from '../../firebase'
 import { useCart } from '../../context/CartContext'
 
 export default function CartFinish () {
@@ -16,7 +16,7 @@ export default function CartFinish () {
     })
 
     const changeInfoForm = (evt) => {
-        setInfoForm({... infoForm, [evt.target.name]: evt.target.value})
+        setInfoForm({...infoForm, [evt.target.name]: evt.target.value})
     }
 
     const sendInfoForm = () => {
@@ -24,8 +24,8 @@ export default function CartFinish () {
         const orders = db.collection('orders')
         const total = cartData.reduce((acum, prod) => acum + (prod.price * prod.quantity), 0)
         const newOrder = {
-            items: {... cartData},
-            buyer: {... infoForm},
+            items: {...cartData},
+            buyer: {...infoForm},
             total,
         }
 

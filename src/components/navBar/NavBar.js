@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CartWidget from '../cartWidget/CartWidget';
 import {Link} from "react-router-dom";
 import './NavBar.css'
-import { useCart } from '../../context/CartContext'
 
 const computers = 'computers';
 const components = 'components';
 
 function NavBar(){
-
-    const {cartData} = useCart()
-    const [items, setItems] = useState()
-
-    useEffect(() => {
-        console.log('cambie soy estado')
-    }, [cartData])
 
     return(
         <div className='barra'>
