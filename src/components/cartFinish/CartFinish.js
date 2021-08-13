@@ -50,7 +50,7 @@ export default function CartFinish () {
                         <input id='emailAuth' name='emailAuth' placeholder='Tu email' type='email' onChange={changeEmailAuth}/>
                         <input id='email' name='email' placeholder='Ingresa nuevamente tu email' type='email' onChange={changeInfoForm}/>
                         <input name='phoneNumber' placeholder='Tu telefono' type='text' onChange={changeInfoForm}/>
-                        <button type='submit' disabled={emailAuth !== infoForm.email || (emailAuth && infoForm.email && infoForm.name && infoForm.phoneNumber) == ''} onClick={() => sendInfoForm()}>CONFIRMAR</button>
+                        <button type='submit' disabled={emailAuth !== infoForm.email || (emailAuth && infoForm.email && infoForm.name && infoForm.phoneNumber) === ''} onClick={() => sendInfoForm()}>CONFIRMAR</button>
                     </form>
                 </div> : <div>¡Compra realizada con exito! Tu id de compra es: {orderId}</div>
                 }
