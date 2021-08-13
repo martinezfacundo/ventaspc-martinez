@@ -30,7 +30,7 @@ function ItemDetail({ objeto }) {
             <h3>{objeto.title}</h3>
             <h4>{objeto.description}</h4>
             <h3>${objeto.price}</h3>
-            {!cantidad && <ItemCount initial={0} stock={objeto.stock} onAdd={onAdd} />}
+            {!cantidad && <ItemCount initial={1} stock={objeto.stock} onAdd={onAdd} />}
             {cantidad && <Link to={'/cart'} className='boton-carrito'>Ir al carrito</Link>}
         </div>
     );

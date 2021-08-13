@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CartWidget from '../cartWidget/CartWidget';
 import {Link} from "react-router-dom";
 import './NavBar.css'
@@ -10,7 +10,6 @@ function NavBar(){
 
     return(
         <div className='barra'>
-            
             <div>
                 <Link className='link' to='/'>
                     <h1 className='espacio-titulo'>VENTAS PC</h1>

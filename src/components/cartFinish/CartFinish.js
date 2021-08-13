@@ -14,10 +14,13 @@ export default function CartFinish () {
         email: '',
         phoneNumber: ''
     })
+    const [emailAuth, setEmailAuth] = useState('')
 
     const changeInfoForm = (evt) => {
         setInfoForm({...infoForm, [evt.target.name]: evt.target.value})
     }
+
+    const changeEmailAuth = (evt) => setEmailAuth(evt.target.value)
 
     const sendInfoForm = () => {
         const db = getFirestore()
@@ -44,9 +47,10 @@ export default function CartFinish () {
                     <h2>Completa con tus datos</h2>
                     <form className='form-container'>
                         <input name='name' placeholder='Tu nombre' type='text' onChange={changeInfoForm}/>
-                        <input name='email' placeholder='Tu email' type='email' onChange={changeInfoForm}/>
+                        <input id='emailAuth' name='emailAuth' placeholder='Tu email' type='email' onChange={changeEmailAuth}/>
+                        <input id='email' name='email' placeholder='Ingresa nuevamente tu email' type='email' onChange={changeInfoForm}/>
                         <input name='phoneNumber' placeholder='Tu telefono' type='text' onChange={changeInfoForm}/>
-                        <buttom type='submit' onClick={() => sendInfoForm()}>CONFIRMAR</buttom>
+                        <button type='submit' disabled={emailAuth !== infoForm.email || (emailAuth && infoForm.email && infoForm.name && infoForm.phoneNumber) == ''} onClick={() => sendInfoForm()}>CONFIRMAR</button>
                     </form>
                 </div> : <div>¡Compra realizada con exito! Tu id de compra es: {orderId}</div>
                 }
